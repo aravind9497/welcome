@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form creation</title>
+</head>
+<body>
+	<style type="text/css">
+		body{
+			/*background-image: url(n2.jpg);
+			background-repeat: no-repeat;*/
+			background-size: 100%;
+		}
+		table
+		{
+			background-color: #adc7b7;
+		  margin-right: 100px;
+		  margin-left: 500px;
+		  margin-top: 50px;
+		  margin-bottom: 70px;
+		  border:2px solid red;
+		  line-height: 50px;
+
+		}
+			
+	</style>
+	
+	<form  onsubmit="return validate()">
+		<table ><tr><th colspan="2" style="text-align: center; color:red;">Registration Form</th></tr>
+			<tr>
+				
+					<td>Name</td><th><input type="text" id="fname" name="name" placeholder="enter ur name">
+				</th>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<th>
+					<textarea id="adds"cols="15" rows="5" placeholder="Address"></textarea>
+				</th>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<th>
+					<input type="email" id="mail" name="mail" placeholder="Email">
+				</th>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<th>
+					<input type="password" id="pswd" name="password" placeholder="password">
+				</th>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<th><input type="radio" id="m1" name="gender" value="male">Male
+				    <input type="radio" id="f1" name="gender" value="female">Female
+				</th>
+			</tr>
+
+			<tr>
+				<td>Course</td>
+				<th><input type="checkbox" name="course[]" value="">B Tech
+					<input type="checkbox" name="course[]" value="">BCA
+					<input type="checkbox" name="course[]" value="">MCA
+					<input type="checkbox" name="course[]" value="">Diploma
+				</th>
+			</tr>
+			<tr>
+				<td>District</td>
+				<th>
+					<select name="district" id="dis">
+						<option selected="selected" disabled="disabled" value="">select district</option>
+						<option value="ekm">ekm</option>
+						<option value="kozhikkodu">kozhikkodu</option>
+						<option value="palakkadu">palakkadu</option>
+						<option value="kottayam">kottayam</option>
+						<option value="tvm">tvm</option>
+						<option value="Thrissur"><b>Thrissur</b></option>
+						<option value="idukki">idukki</option>
+						<option value="kannur">kannur</option>
+					</select>
+				</th>
+			</tr>
+				<br>
+			<tr>
+				<th><input type="submit" name="Sign In" value="submit"></th></tr>    
+
+		
+		<script type="text/javascript">
+		function validate()
+		{
+			var a=document.getElementById("fname");
+			var b=document.getElementById("adds");
+			var c=document.getElementById("mail");
+			var d=document.getElementById("pswd");
+			var e=document.getElementById("m1");
+			var f=document.getElementById("f1");
+			var g=document.getElementsByName("course[]");
+			var h=document.getElementById("dis");
+
+				if(a.value=="")
+				{
+					alert("enter your Name");
+					return false;
+				}
+
+				if(b.value=="")
+				{
+					alert("enter your Address");
+					return false;
+				}
+				if(c.value=="")
+				{
+					alert("enter your Email Id");
+					return false;
+				}
+				if(d.value=="")
+				{
+					alert("enter your password");
+					return false;
+				}
+				if(e.checked==false&&f.checked==false)
+					{
+					alert("select your gender");
+					return false;
+				}
+				if(g[0].checked==false&&g[1].checked==false&&g[2].checked==false&&g[3].checked==false)
+					{
+					alert("select your course");
+					return false;
+				}
+				
+                 if(h.value == "")
+                 {
+                 alert("Please select a District");
+                 return false;
+                 }
+
+		}
+
+		
+	</script>
+</table>
+	</form>
+</body>
+</html>
